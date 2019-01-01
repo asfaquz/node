@@ -14,3 +14,19 @@ var freeMemory  =   os.freemem();
 // ES6 /ES2015 : ECMASCRIPT 6
 console.log(`Total Memory : ${totalMemory}`);
 console.log(`Free Memory : ${freeMemory}`);
+
+
+// Event module
+// Note that here, in terms of the naming,
+// the first letter of every word is upper case.
+// This is a convention that indicates that this Event
+// Emitter is a class. It's not a function, it's not a simple
+//value, it's a class
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+// Register a listener
+emitter.on('messageLogged',function(){
+  console.log('Listener called');
+});
+//Raise an event
+emitter.emit('messageLogged');

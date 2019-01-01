@@ -8,3 +8,87 @@ Install jshint
 install the jshint globally using the following command
 
  npm install -g jshint
+
+
+* Core Concept In Node Is Event
+
+An event is basically a signal that indicates that something has happened in our application.
+
+For example,
+
+in Node, we have a class called http that we can use to build
+
+a web server. So we listen on a given port, and
+
+every time we receive a request on that port, that http class
+
+raises an event. Now our job is to respond to that event
+
+which basically involves reading that request and returning
+
+the right response.
+
+Events module.
+________________
+So in this module, we have one class that is called
+
+EventEmitter. It's one of the core building blocks of
+
+Node, and a lot of classes are based on this Event
+
+Emitter
+
+
+A listener is a function that will be called
+
+when that event is raised.
+
+So let's register a listener that will be called when the
+
+messageLogged event is raised. So Register
+
+a listener. So emitter.
+
+look here we have addListener, but we have an
+
+alias for this that we use less often, that is on, if you've
+
+worked with jquery you have seen this before. So on or
+
+add lists are exactly the same. But quite often we use the on method.
+
+Now this method takes two arguments. The first one is the name
+
+of the event, in this case messageLogged.
+
+And the second one is a call back function for the actual
+
+listener. So here we pass a function, and this
+
+function will be called when that event is raised, okay?
+
+Now for now, I just want to log a message in the console, so
+
+console, let's say Listener
+
+called like this. Now, let's run
+
+this application. So Node app js,
+
+and we got this message. Listener, called. So this indicates,
+
+that when we raise this event, this
+
+callback function, or listener was called. Now
+
+of course the order is important here, if you register this
+
+listener after calling the emit method, nothing would have
+
+happened. Because when we call the emit method, this emitter
+
+iterates over all the registered listeners and calls them synchronous
+
+okay? So this is the basic of raising
+
+events, and handling them using the EventEmitter class.
