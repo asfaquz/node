@@ -1,0 +1,10 @@
+* In node every file is a module
+* Variable and function defined in a file a scope to that module.They are not available outside of that module.
+
+
+Create and load a module.
+
+Install jshint
+install the jshint globally using the following command
+
+ npm install -g jshint
